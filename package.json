@@ -1,12 +1,14 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
-  "version": "1.0.0",
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "name": "contentful-starter-gatsby-blog",
+  "description": "Contentful Gatsby Starter Blog",
+  "private": true,
+  "version": "0.0.1",
+  "author": "Contentful <opensource@contentful.com>",
   "bugs": {
-    "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
+    "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
   "dependencies": {
+    "gatsby": "^1.9.277",
     "gatsby-image": "^1.0.55",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-react-helmet": "^1.0.8",
@@ -15,30 +17,22 @@
     "gatsby-transformer-remark": "^1.7.44",
     "lodash": "^4.17.10"
   },
-  "devDependencies": {
-    "babel-eslint": "^8.2.6",
-    "eslint": "^5.2.0",
-    "eslint-plugin-react": "^7.10.0",
-    "gatsby": "^1.9.277",
-    "gh-pages": "^1.2.0"
-  },
-  "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
+  "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
   "keywords": [
     "gatsby",
-    "contentful"
+    "contentful",
+    "starter"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
+    "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
   },
   "scripts": {
     "dev": "gatsby develop",
-    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "heroku-postbuild": "gatsby build"
+    "heroku-postbuild": "gatsby build",
+    "serve": "gatsby serve"
   }
 }
