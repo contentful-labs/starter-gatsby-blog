@@ -44,7 +44,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-             ...GatsbyContentfulSizes_tracedSVG
+             ...GatsbyContentfulSizes_withWebp
             }
           }
           description {
@@ -70,7 +70,7 @@ export const pageQuery = graphql`
               resizingBehavior: PAD
               background: "rgb:000000"
             ) {
-              ...GatsbyContentfulSizes_tracedSVG
+              ...GatsbyContentfulSizes_withWebp
             }
           }
         }
