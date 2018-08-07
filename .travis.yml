@@ -1,0 +1,2 @@
+before_install: sudo apt-get install -y jq
+script: test/test-on-remote-ci.sh
