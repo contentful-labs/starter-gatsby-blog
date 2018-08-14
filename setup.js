@@ -25,7 +25,7 @@ const REPO = 'contentful/content-models'
 const TEMPLATE = 'blog'
 
 // we attach to a specific tag, so we can be sure that this file exists
-const tag = 'v0.0.13'
+const tag = 'v0.0.14'
 
 const url = `https://api.github.com/repos/${REPO}/contents/${TEMPLATE}/contentful-export.json?ref=${tag}`
 
