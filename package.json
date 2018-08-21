@@ -34,6 +34,7 @@
     "build": "gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
+    "start": "npm run build && npm run serve",
     "setup": "npm install --no-save contentful-import yargs-parser axios chalk && node ./setup.js"
   }
 }
