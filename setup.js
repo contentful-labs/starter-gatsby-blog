@@ -64,7 +64,7 @@ fileRequest.then(response => {
 // we need to write a config file with a provided credentials (space id and CDA token)
 // so that `npm run dev` connects to your space.
 function saveConfigFile ({ spaceId, deliveryToken }) {
-  const configFilePath = path.resolve(__dirname, '.contentful.json')
+  const configFilePath = path.resolve(__dirname, 'contentful.json')
   console.log('')
   console.log('Writing config file...')
   console.log('')
