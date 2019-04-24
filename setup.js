@@ -50,7 +50,7 @@ fileRequest.then(response => {
       console.log('')
       console.log(
         `All set! You can now run ${chalk.yellow(
-          'npm run dev'
+          'npm start'
         )} to see it in action.`
       )
       console.log('')
@@ -62,7 +62,7 @@ fileRequest.then(response => {
 })
 
 // we need to write a config file with a provided credentials (space id and CDA token)
-// so that `npm run dev` connects to your space.
+// so that `npm start` connects to your space.
 function saveConfigFile ({ spaceId, deliveryToken }) {
   const configFilePath = path.resolve(__dirname, '.contentful.json')
   console.log('')

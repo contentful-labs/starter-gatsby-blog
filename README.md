@@ -20,7 +20,7 @@ See our [official Contentful getting started guide](https://www.contentful.com/d
 
 ## Crucial Commands
 
-### `npm run dev`
+### `npm start`
 
 Run the project locally with live reload in development mode.
 
