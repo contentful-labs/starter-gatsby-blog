@@ -8,14 +8,16 @@
     "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
   "dependencies": {
-    "gatsby": "^1.9.277",
-    "gatsby-image": "^1.0.55",
-    "gatsby-link": "^1.6.46",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-sharp": "^1.6.46",
-    "gatsby-source-contentful": "^1.3.54",
-    "gatsby-transformer-remark": "^1.7.44",
-    "lodash": "^4.17.10"
+    "gatsby": "^2.19.1",
+    "gatsby-image": "^2.0.13",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-source-contentful": "^2.1.78",
+    "gatsby-transformer-remark": "^2.1.6",
+    "gh-pages": "^2.0.1",
+    "lodash": "^4.17.11",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.0"
   },
   "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
   "keywords": [
