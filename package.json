@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "gatsby": "^2.19.1",
-    "gatsby-image": "^2.0.13",
+    "gatsby-image": "^2.3.1",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-source-contentful": "^2.1.78",
     "gatsby-transformer-remark": "^2.1.6",
