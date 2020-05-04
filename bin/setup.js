@@ -9,7 +9,7 @@ const argv = require("yargs-parser")(process.argv.slice(2));
 
 console.log(`
   To set up this project you need to provide your Space ID
-  and the belonging API access tokens.
+  and the belonging API access tokens. Please use an empty space for this.
 
   You can find all the needed information in your Contentful space under:
 
