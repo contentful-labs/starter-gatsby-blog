@@ -38,6 +38,7 @@
   },
   "scripts": {
     "dev": "npm run develop",
+    "develop": "gatsby develop",
     "build": "gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
