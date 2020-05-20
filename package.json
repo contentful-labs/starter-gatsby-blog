@@ -25,6 +25,9 @@
     "contentful-import": "^7.8.6",
     "netlify-cli": "^2.54.0"
   },
+  "engines": {
+    "node": ">=10.13.0"
+  },
   "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
   "keywords": [
     "gatsby",
