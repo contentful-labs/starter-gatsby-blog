@@ -5,7 +5,9 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
+
     const blogPost = path.resolve('./src/templates/blog-post.js')
+    const vertalingComp = path.resolve('./src/templates/vertaling.js')
     resolve(
       graphql(
         `
@@ -18,6 +20,13 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            allContentfulVertaling {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
           }
         `
       ).then(result => {
@@ -26,6 +35,8 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
+
+        const vertalingen = result.data.allContentfulVertaling.edges
         const posts = result.data.allContentfulBlogPost.edges
         posts.forEach(post => {
           createPage({
@@ -36,6 +47,17 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+
+        vertalingen.forEach(vertaling => {
+          createPage({
+            path: `/vertalingen/${vertaling.node.slug}/`,
+            component: vertalingComp,
+            context: {
+              slug: vertaling.node.slug,
+            },
+          })
+        })
+        
       })
     )
   })
