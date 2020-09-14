@@ -1,3 +1,6 @@
+var env = `.env.${process.env.NODE_ENV}`;
+console.log("ra thea >>>>> "+env);
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
