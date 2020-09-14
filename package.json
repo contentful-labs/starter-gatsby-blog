@@ -47,4 +47,6 @@
     "netlify:login": "netlify login",
     "netlify:deploy": "netlify deploy -d public -p"
   }
+
+  
 }
