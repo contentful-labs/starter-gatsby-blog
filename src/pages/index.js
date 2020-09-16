@@ -8,6 +8,7 @@ import ArticlePreview from '../components/article-preview'
 import { Jumbotron } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import  styles from './blog.module.css';
 
 class RootIndex extends React.Component {
   render() {
@@ -23,11 +24,13 @@ class RootIndex extends React.Component {
           </Helmet>
           <Hero data={author.node} />
           <div className="wrapper">
-          <Jumbotron>
-            <h1>Hello, world!</h1>
+          <Jumbotron className={styles.jum1}>
+            <h1 className={styles.jumbotronTitle}>Whole Home Protection</h1>
             <p>
-              This is a simple hero unit, a simple jumbotron-style component for calling
-              extra attention to featured content or information.
+            Protection for every window, room and door.
+Against intruders, fires, water damage,
+medical emergencies & more. All monitored
+24/7 by professionals ready to dispatch police.
             </p>
             <p>
               <Button variant="primary">Learn more</Button>
