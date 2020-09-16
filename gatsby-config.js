@@ -43,16 +43,15 @@ module.exports = {
     {
       resolve: "gatsby-plugin-s3",
       options: {
-          bucketName: "arn:aws:s3:::amplify-simplisafepreint-sampledev-34740-deployment",
-          parama:{
-            "": {"CacheControl": "private, max-age=031536000"},
-            "**/*.html": {'CacheControl': 'public, max-age=31536000'},
-            "*.js": {"CacheControl": "public, max-age=31536000"},
-            "page-data/app-data.json": {"CacheControl": "public, max-age=31536000"},
-            "page-data/index/page-data.json": {"CacheControl": "public, max-age=31536000"},
-            "page-data/blog/page-data.json": {"CacheControl": "public, max-age=31536000"},
-         },
-         mergeCachingParams: true,
+        bucketName: "arn:aws:s3:::amplify-simplisafeamplify-sampledev-190036-deployment",
+        mergeCachingParams: true,
+        parama:{
+          "**/*.html": {"CacheControl": "public, max-age=31536000"},
+          "*.js": {"CacheControl": "public, max-age=31536000"},
+          "page-data/app-data.json": {"CacheControl": "public, max-age=31536000"},
+          "page-data/index/page-data.json": {"CacheControl": "public, max-age=31536000"},
+          "page-data/blog/page-data.json": {"CacheControl": "public, max-age=31536000"},
+        }
       },
     },
   ],
