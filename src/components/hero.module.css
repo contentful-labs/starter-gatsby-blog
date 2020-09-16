@@ -16,12 +16,13 @@
 
 .heroDetails {
   position: absolute;
-  background: rgba(0, 0, 0, 0.7);
+  background: transparent;
   left: 50%;
-  bottom: 0;
+  bottom: 40%;
   transform: translate(-50%, 0);
   font-size: 14px;
   padding: 0 0.5em;
+  width: 100%;
 }
 
 @media(min-width: 600px) {
