@@ -49,6 +49,7 @@ module.exports = {
             '**.js': {'CacheControl': 'public, max-age=31536000, immutable'},
             'page-data/*.json': {'CacheControl': 'public, max-age=31536000, immutable'},
          },
+         mergeCachingParams: true,
       },
     },
   ],
