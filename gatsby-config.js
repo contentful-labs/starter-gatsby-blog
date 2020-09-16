@@ -40,5 +40,18 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+          bucketName: 'my-website-bucket',
+          parama:{
+            '**/*.html': {'CacheControl': 'public, max-age=0, must-revalidate'},
+            '**/*.js': {'CacheControl': 'public, max-age=31536000, immutable'},
+            '**/*.css': {'CacheControl': 'public, max-age=31536000, immutable'},
+            'static/**': {'CacheControl': 'public, max-age=31536000, immutable'},
+            'icons/**': {'CacheControl': 'public, max-age=31536000, immutable'},
+         },
+      },
+    },
   ],
 };
