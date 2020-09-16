@@ -45,9 +45,11 @@ module.exports = {
       options: {
           bucketName: 'my-website-bucket',
           parama:{
-            '**/*.html': {'CacheControl': 'public, max-age=0, must-revalidate'},
+            '': {'CacheControl': 'public, max-age=031536000, must-revalidate'},
+            '**/*.html': {'CacheControl': 'public, max-age=31536000, must-revalidate'},
             '**.js': {'CacheControl': 'public, max-age=31536000, immutable'},
             'page-data/*.json': {'CacheControl': 'public, max-age=31536000, immutable'},
+            'page-data/blog/page-data.json': {'CacheControl': 'public, max-age=31536000, immutable'},
          },
          mergeCachingParams: true,
       },
