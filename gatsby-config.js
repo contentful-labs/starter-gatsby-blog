@@ -43,8 +43,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-s3",
       options: {
-        bucketName: "arn:aws:s3:::amplify-simplisafeamplify-sampledev-190036-deployment",
-        mergeCachingParams: true,
+        bucketName: "amplify-simplisafeamplify-sampledev-190036-deployment",
+        bucketPrefix:"amplify-simplisafeamplify-sampledev-",
         parama:{
           "**/*.html": {"CacheControl": "public, max-age=31536000"},
           "*.js": {"CacheControl": "public, max-age=31536000"},
