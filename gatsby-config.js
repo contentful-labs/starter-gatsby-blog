@@ -46,10 +46,8 @@ module.exports = {
           bucketName: 'my-website-bucket',
           parama:{
             '**/*.html': {'CacheControl': 'public, max-age=0, must-revalidate'},
-            '**/*.js': {'CacheControl': 'public, max-age=31536000, immutable'},
-            '**/*.css': {'CacheControl': 'public, max-age=31536000, immutable'},
-            'static/**': {'CacheControl': 'public, max-age=31536000, immutable'},
-            'icons/**': {'CacheControl': 'public, max-age=31536000, immutable'},
+            '**.js': {'CacheControl': 'public, max-age=31536000, immutable'},
+            'page-data/*.json': {'CacheControl': 'public, max-age=31536000, immutable'},
          },
       },
     },
