@@ -5,6 +5,9 @@ import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+import { Jumbotron } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class RootIndex extends React.Component {
   render() {
@@ -15,9 +18,21 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
-          <Helmet title="Simplisafe Site" />
+          <Helmet title="Simplisafe Site">
+            <meta name="description" content="This is site Simplisafe" />
+          </Helmet>
           <Hero data={author.node} />
           <div className="wrapper">
+          <Jumbotron>
+            <h1>Hello, world!</h1>
+            <p>
+              This is a simple hero unit, a simple jumbotron-style component for calling
+              extra attention to featured content or information.
+            </p>
+            <p>
+              <Button variant="primary">Learn more</Button>
+            </p>
+          </Jumbotron>
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
