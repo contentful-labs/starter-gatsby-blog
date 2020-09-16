@@ -47,8 +47,9 @@ module.exports = {
           parama:{
             '': {'CacheControl': 'private, max-age=031536000'},
             '**/*.html': {'CacheControl': 'public, max-age=31536000'},
-            '**.js': {'CacheControl': 'public, max-age=31536000'},
-            'page-data/*.json': {'CacheControl': 'public, max-age=31536000'},
+            '*.js': {'CacheControl': 'public, max-age=31536000'},
+            'page-data/app-data.json': {'CacheControl': 'public, max-age=31536000'},
+            'page-data/index/page-data.json': {'CacheControl': 'public, max-age=31536000'},
             'page-data/blog/page-data.json': {'CacheControl': 'public, max-age=31536000'},
          },
          mergeCachingParams: true,
