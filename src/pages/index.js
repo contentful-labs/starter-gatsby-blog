@@ -57,7 +57,7 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlogPost(filter: {node_locale: {eq: "en-US"}}) {
       edges {
         node {
           title
