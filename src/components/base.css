@@ -1,13 +1,13 @@
 @font-face {
-  font-family: "Avenir";
+  font-family: "DinUltra";
   font-weight: 400;
   font-style: normal;
-  src: url("/avenir-400.woff2") format("woff2");
+  src: url("/DINNextLTPro-UltraLight.woff2") format("woff2");
   font-display: swap;
 }
 
 body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: DinUltra,Helvetica,sans-serif;
   font-size: 1em;
   line-height: 1.65;
   color: #373F49;
