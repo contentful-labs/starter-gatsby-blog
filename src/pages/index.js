@@ -24,18 +24,6 @@ class RootIndex extends React.Component {
           </Helmet>
           <Hero data={author.node} />
           <div className="wrapper">
-          <Jumbotron className={styles.jum1}>
-            <h1 className={styles.jumbotronTitle}>Whole Home Protection</h1>
-            <p>
-            Protection for every window, room and door.
-Against intruders, fires, water damage,
-medical emergencies & more. All monitored
-24/7 by professionals ready to dispatch police.
-            </p>
-            <p>
-              <Button variant="primary">Learn more</Button>
-            </p>
-          </Jumbotron>
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
