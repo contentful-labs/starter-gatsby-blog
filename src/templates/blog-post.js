@@ -33,7 +33,7 @@ var cartAttributes = {
 // };
 
 // Increment the customer Id for demo purposes and trigger different variations
-var userId = "customer4";
+var userId = "customer5";
 
 const optimizely = createInstance({
   sdkKey: '9qLfCieQpxTyhkL8iCckc',
