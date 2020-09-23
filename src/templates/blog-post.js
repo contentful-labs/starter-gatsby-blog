@@ -6,7 +6,72 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.css'
+import {
+  createInstance,
+  OptimizelyProvider,
+  OptimizelyFeature,
+  withOptimizely,
+} from '@optimizely/react-sdk';
 
+
+// Uncomment it to set the Bamburgh Customer
+// var cartAttributes = {
+//   'productId': 'sku94578',
+//   'quantity': 1,
+//   'price': 100,
+//   'isBundle': true,
+//   'deviceType': 'iOS',
+// };
+
+// Uncomment it to set the Non Bamburgh Customer
+var cartAttributes = {
+  'productId': 'sku34656',
+  'quantity': 1,
+  'price': 100,
+  'isBundle': true,
+  'deviceType': 'iOS',
+};
+
+// Increment the customer Id for demo purposes and trigger different variations
+var userId = "customer1";
+
+const optimizely = createInstance({
+  sdkKey: '9qLfCieQpxTyhkL8iCckc',
+  datafileOptions: {
+    updateInterval: 10000,
+    autoUpdate: true,
+    urlTemplate: 'https://cdn.optimizely.com/datafiles/9qLfCieQpxTyhkL8iCckc.json',
+  }
+})
+
+function ButtonVar1(props) {
+  function onClick(event) {
+    props.optimizely.track('addToCart', userId, cartAttributes);
+    alert("Variation 1 clicked")
+  }
+
+  return (
+    <button onClick={onClick} style={{ height: '50px', width:'100%', background:"Red", color: "white" }}>
+      Add to Cart
+    </button>
+  )
+}
+
+function ButtonVar2(props) {
+  function onClick(event) {
+    props.optimizely.track('addToCart', userId, cartAttributes);
+    alert("Variation 2 clicked")
+  }
+
+  return (
+    <button onClick={onClick} style={{ height: '50px', width:'100%', background:"Gold", color: "white" }}>
+      Add to Cart
+    </button>
+  )
+}
+
+const WrappedButtonVar1 = withOptimizely(ButtonVar1)
+const WrappedButtonVar2 = withOptimizely(ButtonVar2)
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
@@ -39,10 +104,25 @@ class BlogPostTemplate extends React.Component {
             />
           </div>
         </div>
+        <OptimizelyProvider
+            optimizely={optimizely}
+            user={{ id: userId}}
+          >
+            <OptimizelyFeature autoUpdate={true} feature="add_to_cart_campaign">
+              { (isEnabled, variables) => (
+                isEnabled
+                  ? variables.cartButtonColor == "red" ?<WrappedButtonVar1 /> :<WrappedButtonVar2 />
+                  : <pre >{`[DEBUG: Feature OFF] `}</pre>
+              )}
+            </OptimizelyFeature>
+        </OptimizelyProvider>
       </Layout>
     )
   }
 }
+
+
+                
 
 export default BlogPostTemplate
 
