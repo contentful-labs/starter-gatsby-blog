@@ -44,34 +44,20 @@ const optimizely = createInstance({
   }
 })
 
-function ButtonVar1(props) {
+function ButtonVar(props) {
   function onClick(event) {
     props.optimizely.track('addToCart', userId, cartAttributes);
     alert("Variation 1 clicked")
   }
 
   return (
-    <button onClick={onClick} style={{ height: '50px', width:'100%', background:"Red", color: "white" }}>
+    <button onClick={onClick} style={{ height: '50px', width:'100%', background:"Red", color: props.color }}>
       Add to Cart
     </button>
   )
 }
 
-function ButtonVar2(props) {
-  function onClick(event) {
-    props.optimizely.track('addToCart', userId, cartAttributes);
-    alert("Variation 2 clicked")
-  }
-
-  return (
-    <button onClick={onClick} style={{ height: '50px', width:'100%', background:"Gold", color: "white" }}>
-      Add to Cart
-    </button>
-  )
-}
-
-const WrappedButtonVar1 = withOptimizely(ButtonVar1)
-const WrappedButtonVar2 = withOptimizely(ButtonVar2)
+const WrappedButtonVar = withOptimizely(ButtonVar)
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
@@ -111,7 +97,7 @@ class BlogPostTemplate extends React.Component {
             <OptimizelyFeature autoUpdate={true} feature="add_to_cart_campaign">
               { (isEnabled, variables) => (
                 isEnabled
-                  ? variables.cartButtonColor == "red" ?<WrappedButtonVar1 /> :<WrappedButtonVar2 />
+                  ? <WrappedButtonVar color={variables.cartButtonColor}/>
                   : <pre >{`[DEBUG: Feature OFF] `}</pre>
               )}
             </OptimizelyFeature>
