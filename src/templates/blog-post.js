@@ -14,26 +14,26 @@ import {
 } from '@optimizely/react-sdk';
 
 
-// Uncomment it to set the Bamburgh Customer
-// var cartAttributes = {
-//   'productId': 'sku94578',
-//   'quantity': 1,
-//   'price': 100,
-//   'isBundle': true,
-//   'deviceType': 'iOS',
-// };
-
-// Uncomment it to set the Non Bamburgh Customer
+//Uncomment it to set the Bamburgh Customer
 var cartAttributes = {
-  'productId': 'sku34656',
+  'productId': 'sku94578',
   'quantity': 1,
   'price': 100,
   'isBundle': true,
   'deviceType': 'iOS',
 };
 
+// Uncomment it to set the Non Bamburgh Customer
+// var cartAttributes = {
+//   'productId': 'sku34656',
+//   'quantity': 1,
+//   'price': 100,
+//   'isBundle': true,
+//   'deviceType': 'iOS',
+// };
+
 // Increment the customer Id for demo purposes and trigger different variations
-var userId = "customer1";
+var userId = "customer4";
 
 const optimizely = createInstance({
   sdkKey: '9qLfCieQpxTyhkL8iCckc',
@@ -51,7 +51,7 @@ function ButtonVar(props) {
   }
 
   return (
-    <button onClick={onClick} style={{ height: '50px', width:'100%', background:"Red", color: props.color }}>
+    <button onClick={onClick} style={{ height: '50px', width:'100%', background: props.color, color: "white"}}>
       Add to Cart
     </button>
   )
