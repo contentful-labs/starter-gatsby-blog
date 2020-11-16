@@ -47,7 +47,7 @@ const questions = [
   },
   {
     name: "accessToken",
-    when: !argv.accessToken && !process.env.CONTENTFUL_ACCESS_TOKEN_TOKEN,
+    when: !argv.accessToken && !process.env.CONTENTFUL_ACCESS_TOKEN,
     message: "Your Content Delivery API access token",
   },
 ];
