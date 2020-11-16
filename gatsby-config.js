@@ -7,12 +7,21 @@ const contentfulConfig = {
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 };
 
-// if you want to use the preview API please define
-// CONTENTFUL_HOST in your environment config
-// the `host` property should map to `preview.contentful.com`
+// If you want to use the preview API please define
+// CONTENTFUL_HOST and CONTENTFUL_ACCESS_TOKEN_PREVIEW in your
+// environment config.
+//
+// CONTENTFUL_HOST should map to `preview.contentful.com`
+// CONTENTFUL_ACCESS_TOKEN_PREVIEW should map to your
+// Content Preview API token
+//
+// For more information around Previews check out the documentation:
 // https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/spaces/space/get-a-space/console/js
+//
+// To change back from previews, simply remove the CONTENTFUL_HOST variable
 if (process.env.CONTENTFUL_HOST) {
   contentfulConfig.host = process.env.CONTENTFUL_HOST;
+  contentfulConfig.accessToken = process.env.CONTENTFUL_ACCESS_TOKEN_PREVIEW;
 }
 
 const { spaceId, accessToken } = contentfulConfig;
