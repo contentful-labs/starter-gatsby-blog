@@ -69,11 +69,11 @@ inquirer
     // followed by input given to prompts displayed by the setup script
     spaceId = CONTENTFUL_SPACE_ID || argv.spaceId || spaceId;
     managementToken = argv.managementToken || managementToken;
-    // Some scripts that set up this repo use "deliveryToken" &&
-    // "CONTENTFUL_DELIVERY_TOKEN" instead of "accessToken" &&
-    // "CONTENTFUL_ACCESS_TOKEN". Until all scripts are updated to
-    // use "accessToken" && "CONTENTFUL_ACCESS_TOKEN" we will allow
-    // the deliveryToken variation to work.
+    // Some scripts that set up this repo use `deliveryToken` and
+    // `CONTENTFUL_DELIVERY_TOKEN`, instead of `accessToken` and
+    // `CONTENTFUL_ACCESS_TOKEN`. Until all scripts are updated to
+    // use `accessToken` and `CONTENTFUL_ACCESS_TOKEN` both variations
+    // will work.
     accessToken =
       CONTENTFUL_ACCESS_TOKEN ||
       CONTENTFUL_DELIVERY_TOKEN ||
