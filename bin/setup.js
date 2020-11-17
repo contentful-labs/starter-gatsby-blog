@@ -47,7 +47,11 @@ const questions = [
   },
   {
     name: "accessToken",
-    when: !argv.accessToken && !process.env.CONTENTFUL_ACCESS_TOKEN,
+    when:
+      !argv.accessToken &&
+      !process.env.CONTENTFUL_ACCESS_TOKEN &&
+      !argv.deliveryToken &&
+      !process.env.CONTENTFUL_DELIVERY_TOKEN,
     message: "Your Content Delivery API access token",
   },
 ];
@@ -55,13 +59,27 @@ const questions = [
 inquirer
   .prompt(questions)
   .then(({ spaceId, managementToken, accessToken }) => {
-    const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
+    const {
+      CONTENTFUL_SPACE_ID,
+      CONTENTFUL_ACCESS_TOKEN,
+      CONTENTFUL_DELIVERY_TOKEN,
+    } = process.env;
 
     // env vars are given precedence followed by args provided to the setup
     // followed by input given to prompts displayed by the setup script
     spaceId = CONTENTFUL_SPACE_ID || argv.spaceId || spaceId;
     managementToken = argv.managementToken || managementToken;
-    accessToken = CONTENTFUL_ACCESS_TOKEN || argv.accessToken || accessToken;
+    // Some scripts that set up this repo use `deliveryToken` and
+    // `CONTENTFUL_DELIVERY_TOKEN`, instead of `accessToken` and
+    // `CONTENTFUL_ACCESS_TOKEN`. Until all scripts are updated to
+    // use `accessToken` and `CONTENTFUL_ACCESS_TOKEN` both variations
+    // will work.
+    accessToken =
+      CONTENTFUL_ACCESS_TOKEN ||
+      CONTENTFUL_DELIVERY_TOKEN ||
+      argv.accessToken ||
+      argv.deliveryToken ||
+      accessToken;
 
     console.log("Writing config file...");
     const configFiles = [`.env.development`, `.env.production`].map((file) =>
