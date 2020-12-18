@@ -4,9 +4,9 @@ require("dotenv").config({
 
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
-  accessToken:
-    process.env.CONTENTFUL_ACCESS_TOKEN ||
-    process.env.CONTENTFUL_DELIVERY_TOKEN,
+  accessToken: 
+    process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN || 
+    process.env.CONTENTFUL_ACCESS_TOKEN,
 };
 
 // If you want to use the preview API please define
@@ -23,7 +23,7 @@ const contentfulConfig = {
 // To change back to the normal CDA, remove the CONTENTFUL_HOST variable from your environment.
 if (process.env.CONTENTFUL_HOST) {
   contentfulConfig.host = process.env.CONTENTFUL_HOST;
-  contentfulConfig.accessToken = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
+  contentfulConfig.accessToken = process.env.CONTENTFUL_DELIVERY_TOKEN;
 }
 
 const { spaceId, accessToken } = contentfulConfig;

@@ -16,6 +16,9 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
           <Helmet title={`${post.title} | ${siteTitle}`} />
+          {
+          post.heroImage && 
+          post.heroImage.fluid && 
           <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}
@@ -23,20 +26,28 @@ class BlogPostTemplate extends React.Component {
               fluid={post.heroImage.fluid}
             />
           </div>
+          }
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>
-            <p
-              style={{
-                display: 'block',
-              }}
-            >
-              {post.publishDate}
-            </p>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
-              }}
-            />
+            {
+              post.publishDate &&
+              <p
+                style={{
+                  display: 'block',
+                }}
+              >
+                {post.publishDate}
+              </p>
+            }
+            {
+              post.body &&
+              post.body.childMarkdownRemark.html &&
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: post.body.childMarkdownRemark.html,
+                }}
+              />
+            }
           </div>
         </div>
       </Layout>
