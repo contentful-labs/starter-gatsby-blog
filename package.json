@@ -23,7 +23,8 @@
   },
   "devDependencies": {
     "contentful-import": "^7.9.28",
-    "netlify-cli": "^2.54.0"
+    "netlify-cli": "^2.54.0",
+    "prettier": "^2.2.1"
   },
   "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
   "keywords": [
@@ -45,6 +46,7 @@
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
     "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "netlify:deploy": "netlify deploy -d public -p",
+    "format": "prettier --write 'src/**/*.js' 'bin/*.js'"
   }
 }
