@@ -55,7 +55,9 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+.env*
+!.env.production.sample
+!.env.development.sample
 
 # build folder
 public

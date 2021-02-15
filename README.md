@@ -37,7 +37,7 @@ This project comes with a Contentful setup command `npm run setup`.
 
 This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write config files (`./.env.production` and `./.env.development`).
 
-`npm run setup` automates that for you but if you want to do it yourself rename `.contentful.json.sample` to `.contentful.json` and add your configuration in this file.
+`npm run setup` automates that for you but if you want to do it yourself rename `.env.development.sample` to `.env.development` and add your configuration in this file. You can do this for `.env.production.sample` as well.
 
 ## Crucial Commands
 
