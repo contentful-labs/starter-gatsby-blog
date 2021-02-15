@@ -9,7 +9,7 @@ Thanks for giving the ${pkg.name} a try. 🎉
 To get you going really quickly this project includes a setup step.
 
 ${chalk.yellow.bold("npm run setup")} automates the following steps for you:
-  - creates a config file ${chalk.yellow("./.contentful.json")}
+  - creates config files: ${chalk.yellow("./.env.production, ./.env.development")}
   - imports ${chalk.green("a predefined content model")}
 
 When this is done run:
