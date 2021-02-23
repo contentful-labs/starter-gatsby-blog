@@ -35,9 +35,9 @@ $ gatsby new contentful-starter-blog https://github.com/contentful/starter-gatsb
 
 This project comes with a Contentful setup command `npm run setup`.
 
-This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write a config file (`./.contentful.json`).
+This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write env config files: `./.env.production` && `./env.development`.
 
-`npm run setup` automates that for you but if you want to do it yourself rename `.contentful.json.sample` to `.contentful.json` and add your configuration in this file.
+`npm run setup` automates that for you but if you want to do it yourself rename `.env.example` to `.env.development` and `.env.production` and add your Contentful connection credentials into these files.
 
 ## Crucial Commands
 
