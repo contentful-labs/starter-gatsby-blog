@@ -15,12 +15,12 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
+          <Helmet title={`${post?.title} | ${siteTitle}`} />
           <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}
               alt={post.title}
-              fluid={post.heroImage.fluid}
+              fluid={post.heroImage?.fluid}
             />
           </div>
           <div className="wrapper">
@@ -34,7 +34,7 @@ class BlogPostTemplate extends React.Component {
             </p>
             <div
               dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
+                __html: post.body?.childMarkdownRemark?.html,
               }}
             />
           </div>
