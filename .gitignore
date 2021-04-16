@@ -67,3 +67,7 @@ public
 .contentful.json
 # Local Netlify folder
 .netlify
+
+# enviornment files created by `npm run setup`
+.env.*
+!.env.sample
