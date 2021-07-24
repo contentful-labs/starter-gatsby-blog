@@ -14,21 +14,19 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
-          <Hero data={author.node} />
-          <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
-            <ul className="article-list">
-              {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+        <Helmet title={siteTitle} />
+        <Hero data={author.node} />
+        <div className="wrapper">
+          <h2 className="section-headline">Recent articles</h2>
+          <ul className="article-list">
+            {posts.map(({ node }) => {
+              return (
+                <li key={node.slug}>
+                  <ArticlePreview article={node} />
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </Layout>
     )
@@ -47,9 +45,11 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
+            traced: gatsbyImageData(
+              layout: CONSTRAINED
+              placeholder: TRACED_SVG
+              width: 350
+            )
           }
           description {
             childMarkdownRemark {
@@ -70,14 +70,11 @@ export const pageQuery = graphql`
           }
           title
           heroImage: image {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              background: "rgb:000000"
-            ) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
+            traced: gatsbyImageData(
+              layout: CONSTRAINED
+              placeholder: TRACED_SVG
+              width: 1180
+            )
           }
         }
       }

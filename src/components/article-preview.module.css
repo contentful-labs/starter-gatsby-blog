@@ -1,5 +1,14 @@
 .previewTitle {
-  font-size: 1.5em;
+  font-size: 1.25em;
+  margin-bottom: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover .previewTitle {
+  text-decoration: underline;
 }
 
 .tag {

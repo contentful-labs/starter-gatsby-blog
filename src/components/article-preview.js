@@ -1,20 +1,22 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image"
 
-import styles from './article-preview.module.css'
+import * as styles from './article-preview.module.css'
 
-export default ({ article }) => (
-  <div className={styles.preview}>
-    <Img alt="" fluid={article.heroImage.fluid} />
+const ArticlePreview = ({ article }) => (
+  <Link to={`/blog/${article.slug}`} className={styles.link}>
+    <GatsbyImage alt="" image={article.heroImage.traced} />
     <h3 className={styles.previewTitle}>
-      <Link to={`/blog/${article.slug}`}>{article.title}</Link>
+      {article.title}
     </h3>
-    <small>{article.publishDate}</small>
+    <small className="meta">{article.publishDate}</small>
     <p
       dangerouslySetInnerHTML={{
         __html: article.description.childMarkdownRemark.html,
       }}
     />
-  </div>
+  </Link>
 )
+
+export default ArticlePreview
