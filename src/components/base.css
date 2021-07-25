@@ -43,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--semibold);
+  font-weight: var(--bold);
   line-height: var(--dense);
 }
 
@@ -62,8 +62,8 @@ a.active {
 
 tt, code, kbd {
   background: var(--black-fade-5);
-  padding-top: 0.2em;
   padding-bottom: 0.2em;
+  padding-top: 0.2em;
 }
 
 tt, code, kbd {
@@ -74,16 +74,16 @@ tt, code, kbd {
 tt, code {
   background-color: var(--black-fade-5);
   border-radius: var(--radius-sm);
-  padding: 0.2em 0;
   font-weight: var(--medium);
+  padding: 0.2em 0;
 }
 
 code:before,
 code:after,
 tt:before,
 tt:after {
-  letter-spacing: -0.2em;
   content: " ";
+  letter-spacing: -0.2em;
 }
 
 pre, code {

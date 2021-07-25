@@ -1,54 +1,26 @@
-.title {
-  margin-bottom: var(--space-xs);
-  font-weight: var(--bold);
-  font-size: var(--text-3xl);
+.meta {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-style: italic;
+  margin: 0 auto 1em;
+  max-width: var(--size-max-width);
+  padding-bottom: var(--size-gutter);
+  padding-left: var(--size-gutter);
+  position: relative;
+  top: -1em;
 }
 
 .article {
   display: grid;
-  line-height: var(--loose);
   font-size: var(--text-prose);
-  /* letter-spacing: var(--text-prose-tracking); */
-  padding: var(--size-gutter) var(--size-gutter) calc(var(--size-gutter) * 3);
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: var(--size-max-width);
-    margin: 0 auto;
-    /* margin-right: calc(var(--size-gutter) * 3); */
-  }
+  gap: var(--space-xl);
+  letter-spacing: var(--text-prose-tracking);
+  line-height: var(--loose);
+  padding: var(--size-gutter) var(--size-gutter) calc(var(--size-gutter) * 2);
 }
 
 .body {
   max-width: 48rem;
-}
-
-.meta {
-  font-family: var(--font-serif);
-  position: relative;
-  top: -1em;
-  margin: 0 auto 1em;
-  font-size: var(--text-md);
-  padding-left: var(--size-gutter);
-  padding-bottom: var(--size-gutter);
-  max-width: var(--size-max-width);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-@media (min-width: 1024px) {
-  .article {
-    width: calc(85% - (var(--size-gutter) * 1));
-    margin: 0 calc(var(--size-gutter) * 1) 0 auto;
-    padding-left: 0;
-    padding-right: 0;
-    gap: var(--space-3xl);
-  }
-
-  .article ul {
-    padding-left: 0;
-  }
 }
 
 .article h2:first-of-type {
@@ -56,8 +28,8 @@
 }
 
 .article a {
-  font-weight: var(--semibold);
   border-bottom: 1.5px solid currentColor;
+  font-weight: var(--medium);
 }
 
 .article a:hover {
@@ -66,8 +38,8 @@
 }
 
 .article p {
-  margin-top: 0;
   margin-bottom: 1.5em;
+  margin-top: 0;
 }
 
 .article h1,
@@ -82,8 +54,8 @@
 .article h6 {
   font-size: var(--text-prose);
   font-weight: var(--semibold);
-  margin-bottom: 1em;
-  margin-top: 2em;
+  margin-bottom: 0.5em;
+  margin-top: 3em;
 }
 
 .article li {
@@ -96,4 +68,29 @@
   justify-content: space-between;
   list-style: none;
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--size-max-width);
+    margin: 0 auto;
+  }
+
+  .article {
+    gap: var(--space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .article {
+    gap: var(--space-3xl);
+    margin: 0 var(--size-gutter) 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: calc(85% - var(--size-gutter));
+  }
+
+  .article ul {
+    padding-left: 0;
+  }
 }

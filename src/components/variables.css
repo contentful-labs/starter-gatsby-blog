@@ -66,27 +66,22 @@
   
   /* size */
   --size-gutter: var(--space-2xl);
-  --size-max-width: 1280px;
+  --size-max-width: 80rem;
+  --size-logo: var(--space-2xl);
 }
-  
+
+@media (min-width: 480px) {
+    :root {
+      --size-gutter: var(--space-3xl);
+    }
+  }
+
 @media (min-width: 768px) {
   :root {
     --text-lead: var(--text-2xl);
     --text-title: var(--text-4xl);
     --text-prose-tracking: -0.014em;
     --text-prose: var(--text-lg);
-    --size-gutter: var(--space-3xl);
   }
 }
 
-@media (min-width: 1280px) {
-  :root {
-    --text-title: var(--text-5xl);
-  }
-}
-
-@media (min-width: 1280px) {
-  :root {
-    --text-prose: var(--text-xl);
-  }
-}
