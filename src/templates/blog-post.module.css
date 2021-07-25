@@ -5,6 +5,7 @@
 }
 
 .article {
+  display: grid;
   line-height: var(--loose);
   font-size: var(--text-prose);
   /* letter-spacing: var(--text-prose-tracking); */
@@ -42,6 +43,7 @@
     margin: 0 calc(var(--size-gutter) * 1) 0 auto;
     padding-left: 0;
     padding-right: 0;
+    gap: var(--space-3xl);
   }
 
   .article ul {
@@ -86,4 +88,12 @@
 
 .article li {
   margin-bottom: 0.5em;
+}
+
+.articleNavigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
 }
