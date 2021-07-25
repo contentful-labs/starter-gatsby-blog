@@ -1,33 +1,24 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import { Helmet } from 'react-helmet'
-import Hero from '../components/hero'
+
 import Layout from '../components/layout'
+import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
 
 class RootIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
       <Layout location={this.props.location}>
-        <Helmet title={siteTitle} />
-        <Hero data={author.node} />
-        <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <ArticlePreview article={node} />
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+        <Hero
+          image={author.node.heroImage.traced}
+          title={author.node.name}
+          content={author.node.shortBio.shortBio}
+        />
+        <ArticlePreview posts={posts} />
       </Layout>
     )
   }
@@ -46,9 +37,10 @@ export const pageQuery = graphql`
           tags
           heroImage {
             traced: gatsbyImageData(
-              layout: CONSTRAINED
-              placeholder: TRACED_SVG
-              width: 350
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+              width: 424
+              height: 212
             )
           }
           description {
@@ -72,7 +64,7 @@ export const pageQuery = graphql`
           heroImage: image {
             traced: gatsbyImageData(
               layout: CONSTRAINED
-              placeholder: TRACED_SVG
+              placeholder: BLURRED
               width: 1180
             )
           }

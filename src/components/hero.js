@@ -3,17 +3,16 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import * as styles from './hero.module.css'
 
-const Hero = ({ data }) => (
+const Hero = ({ image, title, content }) => (
   <div className={styles.hero}>
-    <GatsbyImage
-      className={styles.heroImage}
-      alt={data.name}
-      image={data.heroImage.traced}
-    />
-    <div className={styles.heroDetails}>
-      <h3 className={styles.heroHeadline}>{data.name}</h3>
-      <p className={styles.heroTitle}>{data.title}</p>
-      <p>{data.shortBio.shortBio}</p>
+    {image && (<GatsbyImage
+      className={styles.image}
+      alt={title}
+      image={image}
+    />)}
+    <div className={styles.details}>
+      <h1 className={styles.title}>{title}</h1>
+      {content && <p className={styles.content}>{content}</p>}
     </div>
   </div>
 )

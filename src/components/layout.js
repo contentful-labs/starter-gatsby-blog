@@ -1,17 +1,21 @@
 import React from 'react'
-import Container from './container'
-import Navigation from './navigation'
 
+import './variables.css'
 import './base.css'
+import Seo from "./seo"
+import Navigation from './navigation'
+import Footer from './footer'
 class Template extends React.Component {
   render() {
     const { children } = this.props
 
     return (
-      <Container>
+      <>
+        <Seo />
         <Navigation />
         {children}
-      </Container>
+        <Footer />
+      </>
     )
   }
 }

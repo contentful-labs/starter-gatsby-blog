@@ -1,7 +1,13 @@
 import React from 'react'
 
 const Container = ({ children }) => (
-  <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 2rem' }}>{children}</div>
+  <div style={{
+    maxWidth: 'var(--size-max-width)',
+    margin: '0 auto',
+    padding: 'var(--space-2xl) var(--size-gutter)',
+  }}>
+    {children}
+  </div>
 )
 
 export default Container

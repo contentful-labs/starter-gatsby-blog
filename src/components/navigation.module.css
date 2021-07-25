@@ -1,9 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--size-max-width);
+  align-items: center;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--size-gutter);
+}
+
 .navigation {
   display: flex;
   list-style: none;
-  padding: 1rem 0;
   margin: 0;
-  gap: 1rem;
+  gap: var(--space-xl);
 }
 
 .navigationItem {
@@ -12,5 +20,12 @@
 }
 
 .navigationItem a {
+  border-bottom: 1.5px solid transparent;
   color: currentColor;
+  text-decoration: none;
+}
+
+.navigationItem a:hover {
+  border-bottom-color: var(--primary);
+  color: var(--primary);
 }
