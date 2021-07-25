@@ -28,18 +28,16 @@
 }
 
 .title {
-  /* letter-spacing: -0.028em; */
-  /* text-transform: uppercase; */
+  letter-spacing: -0.012em;
   font-size: var(--text-title);
-  font-weight: var(--heavy);
+  font-weight: var(--extrabold);
   line-height: var(--solid);
   margin: 0 0 var(--space-xl);
 }
 
 .content {
-  /* text-transform: uppercase; */
   font-size: var(--text-lead);
-  font-weight: var(--bold);
+  font-weight: var(--semibold);
   margin: 0;
 }
 

@@ -16,6 +16,10 @@
   src: url("/fonts/Inter-italic.var.woff2?v=3.19") format("woff2");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html * {
   box-sizing: border-box;
 }
@@ -43,7 +47,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--bold);
+  font-weight: var(--semibold);
   line-height: var(--dense);
 }
 
