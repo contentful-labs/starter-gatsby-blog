@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import Container from "./container"
-import Tags from "./tags"
+import Container from './container'
+import Tags from './tags'
 import * as styles from './article-preview.module.css'
 
 const ArticlePreview = ({ posts }) => (
@@ -11,12 +11,10 @@ const ArticlePreview = ({ posts }) => (
     <ul className={styles.articleList}>
       {posts.map(({ node }) => {
         return (
-          <li key={node.slug}>  
+          <li key={node.slug}>
             <Link to={`/blog/${node.slug}`} className={styles.link}>
               <GatsbyImage alt="" image={node.heroImage.traced} />
-              <h2 className={styles.title}>
-                {node.title}
-              </h2>
+              <h2 className={styles.title}>{node.title}</h2>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.description.childMarkdownRemark.html,
@@ -28,7 +26,8 @@ const ArticlePreview = ({ posts }) => (
               </div>
             </Link>
           </li>
-        )})}
+        )
+      })}
     </ul>
   </Container>
 )

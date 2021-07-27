@@ -4,7 +4,7 @@
   font-display: swap;
   font-style: normal;
   font-named-instance: 'Regular';
-  src: url("/fonts/Inter-roman.var.woff2?v=3.19") format("woff2");
+  src: url('/fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-display: swap;
   font-style: italic;
   font-named-instance: 'Italic';
-  src: url("/fonts/Inter-italic.var.woff2?v=3.19") format("woff2");
+  src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
 }
 
 html {
@@ -26,7 +26,7 @@ html * {
 
 body {
   background: var(--background);
-  color:var(--text-color);
+  color: var(--text-color);
   font-family: var(--font-sans);
   font-size: 16px;
   font-weight: var(--body);
@@ -64,18 +64,23 @@ a.active {
   font-weight: var(--bold);
 }
 
-tt, code, kbd {
+tt,
+code,
+kbd {
   background: var(--black-fade-5);
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
 
-tt, code, kbd {
+tt,
+code,
+kbd {
   font-family: var(--font-monospace);
   font-size: 90%;
 }
 
-tt, code {
+tt,
+code {
   background-color: var(--black-fade-5);
   border-radius: var(--radius-sm);
   font-weight: var(--medium);
@@ -86,10 +91,11 @@ code:before,
 code:after,
 tt:before,
 tt:after {
-  content: " ";
+  content: ' ';
   letter-spacing: -0.2em;
 }
 
-pre, code {
+pre,
+code {
   font-family: var(--font-monospace);
 }
