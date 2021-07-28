@@ -13,7 +13,7 @@ class Template extends React.Component {
       <>
         <Seo />
         <Navigation />
-        {children}
+        <main>{children}</main>
         <Footer />
       </>
     )
