@@ -97,9 +97,6 @@ export const pageQuery = graphql`
         childMarkdownRemark {
           html
           timeToRead
-          wordCount {
-            words
-          }
         }
       }
       tags
