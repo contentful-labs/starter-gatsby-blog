@@ -33,7 +33,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            traced: gatsbyImageData(
+            gatsbyImageData(
               layout: FULL_WIDTH
               placeholder: BLURRED
               width: 424

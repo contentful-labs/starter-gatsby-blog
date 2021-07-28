@@ -13,7 +13,7 @@ const ArticlePreview = ({ posts }) => (
         return (
           <li key={node.slug}>
             <Link to={`/blog/${node.slug}`} className={styles.link}>
-              <GatsbyImage alt="" image={node.heroImage.traced} />
+              <GatsbyImage alt="" image={node.heroImage.gatsbyImageData} />
               <h2 className={styles.title}>{node.title}</h2>
               <p
                 dangerouslySetInnerHTML={{
