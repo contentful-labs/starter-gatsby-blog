@@ -9,20 +9,20 @@ import * as styles from './article-preview.module.css'
 const ArticlePreview = ({ posts }) => (
   <Container>
     <ul className={styles.articleList}>
-      {posts.map(({ node }) => {
+      {posts.map((post) => {
         return (
-          <li key={node.slug}>
-            <Link to={`/blog/${node.slug}`} className={styles.link}>
-              <GatsbyImage alt="" image={node.heroImage.gatsbyImageData} />
-              <h2 className={styles.title}>{node.title}</h2>
+          <li key={post.slug}>
+            <Link to={`/blog/${post.slug}`} className={styles.link}>
+              <GatsbyImage alt="" image={post.heroImage.gatsbyImageData} />
+              <h2 className={styles.title}>{post.title}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: node.description.childMarkdownRemark.html,
+                  __html: post.description.childMarkdownRemark.html,
                 }}
               />
               <div className={styles.meta}>
-                <small className="meta">{node.publishDate}</small>
-                <Tags tags={node.tags} />
+                <small className="meta">{post.publishDate}</small>
+                <Tags tags={post.tags} />
               </div>
             </Link>
           </li>
