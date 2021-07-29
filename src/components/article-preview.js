@@ -15,7 +15,7 @@ const ArticlePreview = ({ posts }) => (
             <Link to={`/blog/${node.slug}`} className={styles.link}>
               <GatsbyImage alt="" image={node.heroImage.gatsbyImageData} />
               <h2 className={styles.title}>{node.title}</h2>
-              <p
+              <div
                 dangerouslySetInnerHTML={{
                   __html: node.description.childMarkdownRemark.html,
                 }}
