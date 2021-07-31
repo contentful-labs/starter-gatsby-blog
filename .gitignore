@@ -63,6 +63,9 @@ public
 # gatsby cache folder
 .cache
 
+# gatsby configs
+.env*
+
 # contentful config file
 .contentful.json
 # Local Netlify folder
