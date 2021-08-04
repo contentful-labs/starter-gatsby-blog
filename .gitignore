@@ -51,23 +51,24 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
+# Yarn integrity file
 .yarn-integrity
 
 # dotenv environment variables file
 .env*
 
-# build folder
+# Gatsby build folder
 public
 
-# gatsby cache folder
+# Gatsby cache folder
 .cache
 
-# contentful config file
+# Contentful config file
 .contentful.json
+
 # Local Netlify folder
 .netlify
 
-# System Files
+# System files
 .DS_Store
 Thumbs.db
