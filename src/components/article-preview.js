@@ -8,7 +8,7 @@ import * as styles from './article-preview.module.css'
 
 const ArticlePreview = ({ posts }) => {
   if (!posts) return null
-  if (!posts.isArray) return null
+  if (!Array.isArray(posts)) return null
 
   return (
     <Container>
