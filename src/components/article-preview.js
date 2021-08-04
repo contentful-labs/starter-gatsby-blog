@@ -19,16 +19,16 @@ const ArticlePreview = ({ posts }) => {
               <Link to={`/blog/${post.slug}`} className={styles.link}>
                 <GatsbyImage alt="" image={post.heroImage.gatsbyImageData} />
                 <h2 className={styles.title}>{post.title}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: post.description.childMarkdownRemark.html,
-                  }}
-                />
-                <div className={styles.meta}>
-                  <small className="meta">{post.publishDate}</small>
-                  <Tags tags={post.tags} />
-                </div>
               </Link>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: post.description.childMarkdownRemark.html,
+                }}
+              />
+              <div className={styles.meta}>
+                <small className="meta">{post.publishDate}</small>
+                <Tags tags={post.tags} />
+              </div>
             </li>
           )
         })}
