@@ -68,4 +68,6 @@ public
 # Local Netlify folder
 .netlify
 
+# System Files
 .DS_Store
+Thumbs.db
