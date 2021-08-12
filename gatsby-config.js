@@ -36,7 +36,8 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful starter",
+    title: "Gatsby Contentful Starter",
+    description: "Official Contentful Gatsby Starter",
   },
   pathPrefix: "/gatsby-contentful-starter",
   plugins: [
@@ -44,6 +45,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-image",
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,

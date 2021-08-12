@@ -1,14 +1,29 @@
-.previewTitle {
-  font-size: 1.5em;
+.article-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: var(--space-3xl);
 }
 
-.tag {
-  color: #A0A0A0;
-  text-decoration: none;
+.title {
   display: inline-block;
-  padding: .33333rem .5rem;
-  line-height: 1;
-  border-radius: 2px;
-  border: 1px solid #A0A0A0;
-  margin-right: .5em;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xs);
+  margin-top: var(--space-lg);
+  border-bottom: 1.5px solid transparent;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover .title {
+  border-bottom-color: var(--primary);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
 }

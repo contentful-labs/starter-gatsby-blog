@@ -1,0 +1,88 @@
+:root {
+  /* primitives */
+  /* font-family */
+  --font-sans: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  --font-serif: 'Times New Roman', Times, serif;
+
+  /* palette */
+  --white: #fff;
+  --black: #000;
+  --black-fade-5: rgba(0, 0, 0, 0.05);
+
+  /* radii */
+  --radius-sm: 4px;
+
+  /* spacing */
+  --space-sm: 4px;
+  --space-md: 8px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 48px;
+
+  /* line-height */
+  --solid: 1;
+  --dense: 1.25;
+  --default: 1.5;
+  --loose: 1.75;
+
+  /* font-weight */
+  --body: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+  --extrabold: 800;
+  --heavy: 900;
+
+  /* font-size */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 48px;
+  --text-5xl: 64px;
+  --text-6xl: 76px;
+
+  /* tokens */
+  /* colors */
+  --primary: #4a90e2;
+  --background: var(--white);
+  --border: var(--black-fade-5);
+
+  /* text */
+  /* color */
+  --text-color: var(--black);
+  /* size */
+  --text-lead: var(--text-lg);
+  --text-prose: var(--text-md);
+  --text-title: var(--text-3xl);
+  /* tracking */
+  --text-prose-tracking: -0.011em;
+
+  /* size */
+  --size-gutter: var(--space-2xl);
+  --size-logo: var(--space-2xl);
+  --size-max-width: 80rem;
+}
+
+@media (min-width: 480px) {
+  :root {
+    --size-gutter: var(--space-3xl);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --text-lead: var(--text-2xl);
+    --text-title: var(--text-4xl);
+    --text-prose-tracking: -0.014em;
+    --text-prose: var(--text-lg);
+  }
+}

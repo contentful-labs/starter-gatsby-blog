@@ -1,42 +1,53 @@
-const Promise = require('bluebird')
 const path = require('path')
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
-    resolve(
-      graphql(
-        `
-          {
-            allContentfulBlogPost {
-              edges {
-                node {
-                  title
-                  slug
-                }
-              }
-            }
-          }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
-        }
+  // Define a template for blog post
+  const blogPost = path.resolve('./src/templates/blog-post.js')
 
-        const posts = result.data.allContentfulBlogPost.edges
-        posts.forEach(post => {
-          createPage({
-            path: `/blog/${post.node.slug}/`,
-            component: blogPost,
-            context: {
-              slug: post.node.slug,
-            },
-          })
-        })
-      })
+  const result = await graphql(
+    `
+      {
+        allContentfulBlogPost {
+          nodes {
+            title
+            slug
+          }
+        }
+      }
+    `
+  )
+
+  if (result.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your Contentful posts`,
+      result.errors
     )
-  })
+    return
+  }
+
+  const posts = result.data.allContentfulBlogPost.nodes
+
+  // Create blog posts pages
+  // But only if there's at least one blog post found in Contentful
+  // `context` is available in the template as a prop and as a variable in GraphQL
+
+  if (posts.length > 0) {
+    posts.forEach((post, index) => {
+      const previousPostSlug = index === 0 ? null : posts[index - 1].slug
+      const nextPostSlug =
+        index === posts.length - 1 ? null : posts[index + 1].slug
+
+      createPage({
+        path: `/blog/${post.slug}/`,
+        component: blogPost,
+        context: {
+          slug: post.slug,
+          previousPostSlug,
+          nextPostSlug,
+        },
+      })
+    })
+  }
 }
