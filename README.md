@@ -2,7 +2,7 @@
 
 Create a [Gatsby](http://gatsbyjs.com/) blog powered by [Contentful](https://www.contentful.com).
 
-![The index page of the starter blog](https://rawgit.com/contentful/starter-gatsby-blog/master/screenshot.jpg "The index page of the starter blog")
+![An article page of the starter blog](/screenshot.jpg "An article page of the starter blog")
 
 Static sites are scalable, secure and have very little required maintenance. They come with a drawback though. Not everybody feels good editing files, building a project and uploading it somewhere. This is where Contentful comes into play.
 
