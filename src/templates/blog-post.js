@@ -22,21 +22,21 @@ class BlogPostTemplate extends React.Component {
           image={`http:${post.heroImage.resize.src}`}
         />
         <Hero
-          image={post.heroImage.gatsbyImageData}
+          image={post.heroImage?.gatsbyImageData}
           title={post.title}
-          content={post.description.childMarkdownRemark.excerpt}
+          content={post.description?.childMarkdownRemark?.excerpt}
         />
         <div className={styles.container}>
           <span className={styles.meta}>
-            {post.author.name} &middot;{' '}
+            {post.author?.name} &middot;{' '}
             <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
-            {post.body.childMarkdownRemark.timeToRead} minute read
+            {post.body?.childMarkdownRemark?.timeToRead} minute read
           </span>
           <div className={styles.article}>
             <div
               className={styles.body}
               dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
+                __html: post.body?.childMarkdownRemark?.html,
               }}
             />
             <Tags tags={post.tags} />
