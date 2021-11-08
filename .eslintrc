@@ -9,5 +9,8 @@
   },
   "parserOptions": {
     "ecmaVersion": 2020
+  },
+  "env": {
+    "browser": true
   }
 }
