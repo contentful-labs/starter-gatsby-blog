@@ -40,16 +40,16 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const _form = e.target
+    const hiddenForm = e.target
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': _form.getAttribute('name'),
+        'form-name': hiddenForm.getAttribute('name'),
         ...form,
       }),
     })
-      .then(() => navigate(_form.getAttribute('action')))
+      .then(() => navigate(hiddenForm.getAttribute('action')))
       // eslint-disable-next-line no-alert
       .catch((error) => alert(error))
   }
@@ -153,75 +153,75 @@ const ContactForm = () => {
                     <VStack spacing={5}>
                       <form
                         name="contact"
-                        method="post"
                         data-netlify="true"
                         action="/thanks/"
                         data-netlify-honeypot="bot-field"
                         onSubmit={handleSubmit}
                       >
-                        <input type="hidden" name="name" value={form.name} />
-                        <input type="hidden" name="email" value={form.email} />
-                        <textarea
-                          type="hidden"
-                          name="question"
-                          value={form.question}
-                        />
+                        <p hidden>
+                          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                          <label>
+                            Don’t fill this out:{' '}
+                            <input name="bot-field" onChange={handleChange} />
+                          </label>
+                        </p>
+
+                        <FormControl id="name">
+                          <FormLabel>Uw naam</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={
+                                <FontAwesomeIcon size="28px" icon={faUser} />
+                              }
+                            />
+                            <Input
+                              name="name"
+                              type="text"
+                              size="md"
+                              onChange={handleChange}
+                            />
+                          </InputGroup>
+                        </FormControl>
+                        <FormControl id="mail">
+                          <FormLabel>Uw e-mail</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={<EmailIcon color="gray.800" />}
+                            />
+                            <Input
+                              type="text"
+                              size="md"
+                              name="email"
+                              onChange={handleChange}
+                            />
+                          </InputGroup>
+                        </FormControl>
+                        <FormControl id="name">
+                          <FormLabel>Uw vraag</FormLabel>
+                          <Textarea
+                            name="question"
+                            onChange={handleChange}
+                            borderColor="gray.300"
+                            _hover={{
+                              borderRadius: 'gray.300',
+                            }}
+                            placeholder="message"
+                          />
+                        </FormControl>
+                        <FormControl id="name" float="right">
+                          <Button
+                            variant="solid"
+                            bg="brand.200"
+                            color="white"
+                            _hover={{}}
+                            type="submit"
+                          >
+                            Send Message
+                          </Button>
+                        </FormControl>
                       </form>
-                      <FormControl id="name">
-                        <FormLabel>Uw naam</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={
-                              <FontAwesomeIcon size="28px" icon={faUser} />
-                            }
-                          />
-                          <Input
-                            name="name"
-                            type="text"
-                            size="md"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="mail">
-                        <FormLabel>Uw e-mail</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<EmailIcon color="gray.800" />}
-                          />
-                          <Input
-                            type="text"
-                            size="md"
-                            name="email"
-                            onChange={handleChange}
-                          />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="name">
-                        <FormLabel>Uw vraag</FormLabel>
-                        <Textarea
-                          name="question"
-                          onChange={handleChange}
-                          borderColor="gray.300"
-                          _hover={{
-                            borderRadius: 'gray.300',
-                          }}
-                          placeholder="message"
-                        />
-                      </FormControl>
-                      <FormControl id="name" float="right">
-                        <Button
-                          variant="solid"
-                          bg="brand.200"
-                          color="white"
-                          _hover={{}}
-                          onClick={handleSubmit}
-                        >
-                          Send Message
-                        </Button>
-                      </FormControl>
                     </VStack>
                   </Box>
                 </Box>
