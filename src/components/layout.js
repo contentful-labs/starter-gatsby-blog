@@ -1,23 +1,21 @@
 import React from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
 
-import './variables.css'
-import './global.css'
+import '../styles/variables.css'
+import '../styles/global.css'
+import theme from '../styles/extend-theme'
+
 import Seo from './seo'
-import Navigation from './navigation'
-import Footer from './footer'
-class Template extends React.Component {
-  render() {
-    const { children } = this.props
+import Navigation from './navigation/navigation'
+import Footer from './footer/footer'
 
-    return (
-      <>
-        <Seo />
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-      </>
-    )
-  }
-}
+const Template = ({ children }) => (
+  <ChakraProvider theme={theme}>
+    <Seo />
+    <Navigation />
+    <main>{children}</main>
+    <Footer />
+  </ChakraProvider>
+)
 
 export default Template

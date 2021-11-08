@@ -28,12 +28,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allContentfulBlogPost.nodes
+  const hasPosts = posts.length > 0
 
   // Create blog posts pages
   // But only if there's at least one blog post found in Contentful
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  if (posts.length > 0) {
+  if (hasPosts) {
     posts.forEach((post, index) => {
       const previousPostSlug = index === 0 ? null : posts[index - 1].slug
       const nextPostSlug =

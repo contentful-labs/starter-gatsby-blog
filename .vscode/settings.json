@@ -1,0 +1,40 @@
+{
+    "window.zoomLevel": 1,
+    "editor.letterSpacing": 0.5,
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 5,
+    "editor.cursorBlinking": "solid",
+    "editor.snippetSuggestions": "top",
+    "editor.mouseWheelZoom": true,
+    "javascript.format.enable": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "500",
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript", "reactjsx", "jsx", "typescript"],
+    "files.exclude": {
+        // "**/*.js": true,
+        // "**/*.scss": true,
+        "**/node_modules/": false,
+        "**/public": false
+
+    },
+    "editor.renderWhitespace": "all",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "eslint.nodeEnv": "14",
+    "editor.insertSpaces": false,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+}

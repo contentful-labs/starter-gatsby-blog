@@ -12,6 +12,8 @@
   --white: #fff;
   --black: #000;
   --black-fade-5: rgba(0, 0, 0, 0.05);
+  --black-main: #030405;
+  --red-main: #e51c21;
 
   /* radii */
   --radius-sm: 4px;
@@ -52,7 +54,7 @@
 
   /* tokens */
   /* colors */
-  --primary: #4a90e2;
+  --primary: var(--red-main);
   --background: var(--white);
   --border: var(--black-fade-5);
 

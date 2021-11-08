@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #191919;
+  padding: 5px 10px;
+  color: var(--white) !important;
+  border-bottom-width: 2px !important;
+}
+
+.button:hover {
+  animation: slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 8vw;
+  }
+}
