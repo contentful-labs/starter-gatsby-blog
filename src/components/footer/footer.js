@@ -74,7 +74,10 @@ export default function SmallWithLogoLeft() {
           display="flex"
           justifyContent="flex-end"
         >
-          <SocialButton label="Instagram" href="#">
+          <SocialButton
+            label="Instagram"
+            href="https://www.facebook.com/LDBTechnics/"
+          >
             <FontAwesomeIcon style={{ margin: '0px 5px' }} icon={faFacebook} />
           </SocialButton>
         </Stack>
