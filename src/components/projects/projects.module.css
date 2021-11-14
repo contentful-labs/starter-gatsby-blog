@@ -1,6 +1,7 @@
-.article-list {
+.project-list {
   margin: 0;
   padding: 0;
+  margin-bottom: 40px;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -17,6 +18,7 @@
 
 .link {
   text-decoration: none;
+  border-radius: 10px;
 }
 
 .link:hover .title {

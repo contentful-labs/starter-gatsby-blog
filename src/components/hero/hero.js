@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { Link as MainLink } from 'gatsby'
 import {
   Container,
   Stack,
@@ -13,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 
 const Hero = (props) => {
-  const { title, subtitle, image } = props
+  const { title, subtitle, image, disableButton } = props
 
   return (
     <Container maxW="7xl">
@@ -37,18 +38,19 @@ const Hero = (props) => {
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}
           >
-            <Button
-              rounded="full"
-              size="lg"
-              fontWeight="normal"
-              px={6}
-              colorScheme="red"
-              bg="brand.200"
-              color="brand.300"
-              _hover={{ bg: 'red.400' }}
-            >
-              Vraag een offerte aan
-            </Button>
+            {!disableButton && (
+              <Button
+                rounded="full"
+                size="lg"
+                fontWeight="normal"
+                px={6}
+                colorScheme="red"
+                bg="brand.200"
+                color="brand.300"
+              >
+                <MainLink to="/contact">Vraag een offerte aan</MainLink>
+              </Button>
+            )}
           </Stack>
         </Stack>
         <Flex

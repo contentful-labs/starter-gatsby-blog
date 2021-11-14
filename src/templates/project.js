@@ -5,54 +5,55 @@ import { Link, graphql } from 'gatsby'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero/hero'
-import Tags from '../components/tags/tags'
-import * as styles from './blog-post.module.css'
+import * as styles from './project.module.css'
+import CaptionCarousel from '../components/carousel/carousel'
 
-const BlogPostTemplate = (props) => {
+const ProjectTemplate = (props) => {
   const {
-    data: { contentfulBlogPost: post, previous, next },
+    data: { contentfulProject: project, previous, next },
     location,
   } = props
 
   return (
     <Layout location={location}>
       <Seo
-        title={post.title}
-        description={post.description.childMarkdownRemark.excerpt}
-        image={`http:${post.heroImage.resize.src}`}
+        title={project.title}
+        description={project.description.childMarkdownRemark.excerpt}
+        image={`http:${project.heroImage.resize.src}`}
       />
       <Hero
-        image={post.heroImage?.gatsbyImageData}
-        title={post.title}
-        content={post.description?.childMarkdownRemark?.excerpt}
+        image={project.heroImage?.gatsbyImageData}
+        title={project.title}
+        content={project.description?.childMarkdownRemark?.excerpt}
       />
       <div className={styles.container}>
         <span className={styles.meta}>
-          {post.author?.name} &middot;{' '}
-          <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
-          {post.body?.childMarkdownRemark?.timeToRead} minute read
+          {project?.author?.name} &middot;{' '}
+          <time dateTime={project.rawDate}>
+            Datum: {project.dateConstruction}
+          </time>
         </span>
         <div className={styles.article}>
           <div
             className={styles.body}
             dangerouslySetInnerHTML={{
-              __html: post.body?.childMarkdownRemark?.html,
+              __html: project.body?.childMarkdownRemark?.html,
             }}
           />
-          <Tags tags={post.tags} />
+          <CaptionCarousel photos={project.photos} />
           {(previous || next) && (
             <nav>
               <ul className={styles.articleNavigation}>
                 {previous && (
                   <li>
-                    <Link to={`/blog/${previous.slug}`} rel="prev">
+                    <Link to={`/project/${previous.slug}`} rel="prev">
                       ← {previous.title}
                     </Link>
                   </li>
                 )}
                 {next && (
                   <li>
-                    <Link to={`/blog/${next.slug}`} rel="next">
+                    <Link to={`/project/${next.slug}`} rel="next">
                       {next.title} →
                     </Link>
                   </li>
@@ -66,22 +67,22 @@ const BlogPostTemplate = (props) => {
   )
 }
 
-export default BlogPostTemplate
+export default ProjectTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
+  query ProjectBySlug(
     $slug: String!
     $previousPostSlug: String
     $nextPostSlug: String
   ) {
-    contentfulBlogPost(slug: { eq: $slug }) {
+    contentfulProject(slug: { eq: $slug }) {
       slug
       title
-      author {
-        name
+      dateConstruction(formatString: "MMMM Do, YYYY")
+      rawDate: dateConstruction
+      photos {
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
-      publishDate(formatString: "MMMM Do, YYYY")
-      rawDate: publishDate
       heroImage {
         gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, width: 1280)
         resize(height: 630, width: 1200) {
@@ -94,18 +95,17 @@ export const pageQuery = graphql`
           timeToRead
         }
       }
-      tags
       description {
         childMarkdownRemark {
           excerpt
         }
       }
     }
-    previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {
+    previous: contentfulProject(slug: { eq: $previousPostSlug }) {
       slug
       title
     }
-    next: contentfulBlogPost(slug: { eq: $nextPostSlug }) {
+    next: contentfulProject(slug: { eq: $nextPostSlug }) {
       slug
       title
     }

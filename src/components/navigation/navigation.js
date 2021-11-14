@@ -16,7 +16,6 @@ import SwitchTheme from '../switch-theme/switch-theme'
 const links = [
   { name: 'Home', url: '/' },
   { name: 'Projecten', url: '/projecten' },
-  { name: 'Aanbod', url: '/aanbod' },
   { name: 'Vacatures', url: '/vacatures' },
   { name: 'Contact', url: '/contact' },
 ]

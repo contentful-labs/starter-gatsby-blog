@@ -13,7 +13,7 @@ const Template = ({ children }) => (
   <ChakraProvider theme={theme}>
     <Seo />
     <Navigation />
-    <main>{children}</main>
+    <main style={{ 'margin-bottom': '30px' }}>{children}</main>
     <Footer />
   </ChakraProvider>
 )

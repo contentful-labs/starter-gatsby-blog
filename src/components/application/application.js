@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/no-children-prop */
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {
   Container,
   Flex,
@@ -31,11 +31,13 @@ function encode(data) {
     .join('&')
 }
 
-const ContactForm = () => {
+const ApplicationForm = (props) => {
+  const { formRef } = props
   const [form, setForm] = useState({
     name: '',
     email: '',
-    question: '',
+    tel: '',
+    motivation: '',
   })
 
   const handleSubmit = (e) => {
@@ -43,7 +45,7 @@ const ContactForm = () => {
     const hiddenForm = e.target
     fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 'Content-Type': 'multipart/form-data' },
       body: encode({
         'form-name': hiddenForm.getAttribute('name'),
         ...form,
@@ -84,7 +86,7 @@ const ContactForm = () => {
                     textAlign={{ base: 'center', lg: 'left' }}
                     color={useColorModeValue('brand.300', 'brand.100')}
                   >
-                    Contact
+                    Applicatie
                   </Heading>
                   <Text
                     textAlign={{ base: 'center', lg: 'left' }}
@@ -174,6 +176,7 @@ const ContactForm = () => {
                               }
                             />
                             <Input
+                              ref={formRef}
                               name="name"
                               type="text"
                               size="md"
@@ -196,10 +199,25 @@ const ContactForm = () => {
                             />
                           </InputGroup>
                         </FormControl>
+                        <FormControl id="tel">
+                          <FormLabel mt="2">Uw telefoon</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={<PhoneIcon color="gray.800" />}
+                            />
+                            <Input
+                              type="text"
+                              size="md"
+                              name="tel"
+                              onChange={handleChange}
+                            />
+                          </InputGroup>
+                        </FormControl>
                         <FormControl id="name">
-                          <FormLabel mt="2">Uw vraag</FormLabel>
+                          <FormLabel mt="2">Uw motivatie</FormLabel>
                           <Textarea
-                            name="question"
+                            name="motivation"
                             onChange={handleChange}
                             borderColor="gray.300"
                             _hover={{
@@ -208,6 +226,10 @@ const ContactForm = () => {
                             placeholder="message"
                           />
                         </FormControl>
+                        {/* <FormControl id="cv">
+                          <FormLabel mt="2">Uw CV</FormLabel>
+                          <FileInput file={file} setFile={setFile} />
+                        </FormControl> */}
                         <FormControl id="name" float="right">
                           <Button
                             mt={{ sm: 3, md: 3, lg: 5 }}
@@ -233,4 +255,4 @@ const ContactForm = () => {
   )
 }
 
-export default ContactForm
+export default ApplicationForm

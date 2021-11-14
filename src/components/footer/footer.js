@@ -41,6 +41,11 @@ const SocialButton = (props) => {
 export default function SmallWithLogoLeft() {
   return (
     <Box
+      position={{ md: 'fixed' }}
+      bottom="0"
+      left="0"
+      width="100vw"
+      zIndex="10"
       bg={useColorModeValue('gray.100', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
     >
