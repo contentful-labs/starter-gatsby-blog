@@ -152,7 +152,7 @@ const ApplicationForm = (props) => {
                   <Box m={8} color="#0B0E3F">
                     <VStack spacing={8}>
                       <form
-                        name="contact"
+                        name="application"
                         data-netlify="true"
                         action="/thanks/"
                         data-netlify-honeypot="bot-field"
