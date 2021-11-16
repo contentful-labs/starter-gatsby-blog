@@ -5,4 +5,5 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: var(--space-3xl);
+  margin-bottom: 60px;
 }

@@ -37,8 +37,8 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful Starter',
-    description: 'Official Contentful Gatsby Starter',
+    title: 'LDB technics',
+    description: 'Official LDB technics website',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [

@@ -12,7 +12,7 @@ import {
 const Speciality = (props) => {
   const { imgUrl, title, imageData, description } = props
   return (
-    <Center py={12}>
+    <Center py={12} display="contents">
       <Box
         role="group"
         p={6}
