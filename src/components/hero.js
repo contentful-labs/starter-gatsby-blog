@@ -1,12 +1,12 @@
 import React from 'react'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { StaticImage } from "gatsby-plugin-image"
 
 import * as styles from './hero.module.css'
 
 const Hero = ({ image, title, content }) => (
   <div className={styles.hero}>
     {image && (
-      <GatsbyImage className={styles.image} alt={title} image={image} />
+      <StaticImage className={styles.image} alt={title} src="https://images.unsplash.com/photo-1529688530647-93a6e1916f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8" />
     )}
     <div className={styles.details}>
       <h1 className={styles.title}>{title}</h1>

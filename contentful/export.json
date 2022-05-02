@@ -133,17 +133,6 @@
                     "validations": [],
                     "disabled": false,
                     "omitted": false
-                },
-                {
-                    "id": "image",
-                    "name": "Image",
-                    "type": "Link",
-                    "localized": false,
-                    "required": false,
-                    "validations": [],
-                    "disabled": false,
-                    "omitted": false,
-                    "linkType": "Asset"
                 }
             ]
         },
@@ -210,17 +199,6 @@
                     "validations": [],
                     "disabled": false,
                     "omitted": false
-                },
-                {
-                    "id": "heroImage",
-                    "name": "Hero Image",
-                    "type": "Link",
-                    "localized": false,
-                    "required": true,
-                    "validations": [],
-                    "disabled": false,
-                    "omitted": false,
-                    "linkType": "Asset"
                 },
                 {
                     "id": "description",
@@ -332,10 +310,6 @@
                 {
                     "fieldId": "github",
                     "widgetId": "singleLine"
-                },
-                {
-                    "fieldId": "image",
-                    "widgetId": "assetLinkEditor"
                 }
             ],
             "sys": {
@@ -383,10 +357,6 @@
                 {
                     "fieldId": "slug",
                     "widgetId": "slugEditor"
-                },
-                {
-                    "fieldId": "heroImage",
-                    "widgetId": "assetLinkEditor"
                 },
                 {
                     "fieldId": "description",
@@ -525,15 +495,6 @@
                 },
                 "github": {
                     "en-US": "johndoe"
-                },
-                "image": {
-                    "en-US": {
-                        "sys": {
-                            "type": "Link",
-                            "linkType": "Asset",
-                            "id": "7orLdboQQowIUs22KAW4U"
-                        }
-                    }
                 }
             }
         },
@@ -590,15 +551,6 @@
                 },
                 "slug": {
                     "en-US": "automate-with-webhooks"
-                },
-                "heroImage": {
-                    "en-US": {
-                        "sys": {
-                            "type": "Link",
-                            "linkType": "Asset",
-                            "id": "4shwYI3POEGkw0Eg6kcyaQ"
-                        }
-                    }
                 },
                 "description": {
                     "en-US": "Webhooks notify you, another person or system when resources have changed by calling a given HTTP endpoint."
@@ -679,15 +631,6 @@
                 "slug": {
                     "en-US": "hello-world"
                 },
-                "heroImage": {
-                    "en-US": {
-                        "sys": {
-                            "type": "Link",
-                            "linkType": "Asset",
-                            "id": "6Od9v3wzLOysiMum0Wkmme"
-                        }
-                    }
-                },
                 "description": {
                     "en-US": "Your very first content with Contentful, pulled in JSON format using the Content Delivery API."
                 },
@@ -767,15 +710,6 @@
                 "slug": {
                     "en-US": "static-sites-are-great"
                 },
-                "heroImage": {
-                    "en-US": {
-                        "sys": {
-                            "type": "Link",
-                            "linkType": "Asset",
-                            "id": "4NzwDSDlGECGIiokKomsyI"
-                        }
-                    }
-                },
                 "description": {
                     "en-US": "Worry less about security, caching, and talking to the server. Static sites are the new thing."
                 },
@@ -803,260 +737,7 @@
             }
         }
     ],
-    "assets": [
-        {
-            "sys": {
-                "space": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "Space",
-                        "id": "28p9vvm1oxuw"
-                    }
-                },
-                "id": "7orLdboQQowIUs22KAW4U",
-                "type": "Asset",
-                "createdAt": "2017-05-11T13:04:42.667Z",
-                "updatedAt": "2017-05-16T09:29:04.154Z",
-                "createdBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "updatedBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "publishedCounter": 3,
-                "version": 56,
-                "publishedBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "publishedVersion": 55,
-                "firstPublishedAt": "2017-05-11T13:05:17.053Z",
-                "publishedAt": "2017-05-16T09:29:04.140Z"
-            },
-            "fields": {
-                "title": {
-                    "en-US": "Sparkler"
-                },
-                "description": {
-                    "en-US": "John with Sparkler"
-                },
-                "file": {
-                    "en-US": {
-                        "url": "//images.contentful.com/28p9vvm1oxuw/7orLdboQQowIUs22KAW4U/a97cd3b3415b51c5facfa6f4d184b650/matt-palmer-254999.jpg",
-                        "details": {
-                            "size": 2293094,
-                            "image": {
-                                "width": 3000,
-                                "height": 2000
-                            }
-                        },
-                        "fileName": "matt-palmer-254999.jpg",
-                        "contentType": "image/jpeg"
-                    }
-                }
-            }
-        },
-        {
-            "sys": {
-                "space": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "Space",
-                        "id": "28p9vvm1oxuw"
-                    }
-                },
-                "id": "6Od9v3wzLOysiMum0Wkmme",
-                "type": "Asset",
-                "createdAt": "2017-05-15T12:05:53.234Z",
-                "updatedAt": "2017-05-15T13:36:58.905Z",
-                "createdBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "updatedBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "publishedCounter": 2,
-                "version": 22,
-                "publishedBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "publishedVersion": 21,
-                "firstPublishedAt": "2017-05-15T12:06:38.633Z",
-                "publishedAt": "2017-05-15T13:36:58.888Z"
-            },
-            "fields": {
-                "title": {
-                    "en-US": "Woman with black hat"
-                },
-                "description": {
-                    "en-US": "Woman wearing a black hat"
-                },
-                "file": {
-                    "en-US": {
-                        "url": "//images.contentful.com/28p9vvm1oxuw/6Od9v3wzLOysiMum0Wkmme/95675d379a1284015a8210ca66cc53a5/cameron-kirby-88711.jpg",
-                        "details": {
-                            "size": 7316629,
-                            "image": {
-                                "width": 3000,
-                                "height": 2000
-                            }
-                        },
-                        "fileName": "cameron-kirby-88711.jpg",
-                        "contentType": "image/jpeg"
-                    }
-                }
-            }
-        },
-        {
-            "sys": {
-                "space": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "Space",
-                        "id": "28p9vvm1oxuw"
-                    }
-                },
-                "id": "4NzwDSDlGECGIiokKomsyI",
-                "type": "Asset",
-                "createdAt": "2017-05-15T12:33:11.841Z",
-                "updatedAt": "2017-05-15T12:33:50.816Z",
-                "createdBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "updatedBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "publishedCounter": 1,
-                "version": 21,
-                "publishedBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "publishedVersion": 20,
-                "firstPublishedAt": "2017-05-15T12:33:50.801Z",
-                "publishedAt": "2017-05-15T12:33:50.801Z"
-            },
-            "fields": {
-                "title": {
-                    "en-US": "City"
-                },
-                "description": {
-                    "en-US": "City pictured from the sky"
-                },
-                "file": {
-                    "en-US": {
-                        "url": "//images.contentful.com/28p9vvm1oxuw/4NzwDSDlGECGIiokKomsyI/d04a5154fa2e2ab02857950639325684/denys-nevozhai-100695.jpg",
-                        "details": {
-                            "size": 15736986,
-                            "image": {
-                                "width": 3992,
-                                "height": 2992
-                            }
-                        },
-                        "fileName": "denys-nevozhai-100695.jpg",
-                        "contentType": "image/jpeg"
-                    }
-                }
-            }
-        },
-        {
-            "sys": {
-                "space": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "Space",
-                        "id": "28p9vvm1oxuw"
-                    }
-                },
-                "id": "4shwYI3POEGkw0Eg6kcyaQ",
-                "type": "Asset",
-                "createdAt": "2017-05-15T12:34:08.279Z",
-                "updatedAt": "2017-05-15T12:35:08.308Z",
-                "createdBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "updatedBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "publishedCounter": 1,
-                "version": 38,
-                "publishedBy": {
-                    "sys": {
-                        "type": "Link",
-                        "linkType": "User",
-                        "id": "066RqBikAjzKy0SWUEtFvH"
-                    }
-                },
-                "publishedVersion": 37,
-                "firstPublishedAt": "2017-05-15T12:35:08.292Z",
-                "publishedAt": "2017-05-15T12:35:08.292Z"
-            },
-            "fields": {
-                "title": {
-                    "en-US": "Man in the fields"
-                },
-                "description": {
-                    "en-US": "Tattooed man walking in a field"
-                },
-                "file": {
-                    "en-US": {
-                        "url": "//images.contentful.com/28p9vvm1oxuw/4shwYI3POEGkw0Eg6kcyaQ/eeaa6df85fb4452ea69ad18c98ffc015/felix-russell-saw-112140.jpg",
-                        "details": {
-                            "size": 4539181,
-                            "image": {
-                                "width": 2500,
-                                "height": 1667
-                            }
-                        },
-                        "fileName": "felix-russell-saw-112140.jpg",
-                        "contentType": "image/jpeg"
-                    }
-                }
-            }
-        }
-    ],
+    "assets": [],
     "locales": [
         {
             "name": "U.S. English",
