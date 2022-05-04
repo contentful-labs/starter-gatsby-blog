@@ -283,7 +283,7 @@
         },
         {
           "fieldId": "shortBio",
-          "widgetId": "markdown"
+          "widgetId": "richTextEditor"
         },
         {
           "fieldId": "email",
@@ -354,11 +354,11 @@
         },
         {
           "fieldId": "description",
-          "widgetId": "markdown"
+          "widgetId": "richTextEditor"
         },
         {
           "fieldId": "body",
-          "widgetId": "markdown"
+          "widgetId": "richTextEditor"
         },
         {
           "fieldId": "author",
