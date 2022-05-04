@@ -77,7 +77,7 @@
         {
           "id": "shortBio",
           "name": "Short Bio",
-          "type": "Text",
+          "type": "RichText",
           "localized": false,
           "required": true,
           "validations": [],
@@ -203,7 +203,7 @@
         {
           "id": "description",
           "name": "Description",
-          "type": "Text",
+          "type": "RichText",
           "localized": false,
           "required": true,
           "validations": [],
@@ -213,7 +213,7 @@
         {
           "id": "body",
           "name": "Body",
-          "type": "Text",
+          "type": "RichText",
           "localized": false,
           "required": true,
           "validations": [],
