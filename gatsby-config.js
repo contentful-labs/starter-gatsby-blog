@@ -39,7 +39,6 @@ module.exports = {
     title: "Gatsby Contentful Starter",
     description: "Official Contentful Gatsby Starter",
   },
-  pathPrefix: "/gatsby-contentful-starter",
   plugins: [
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
