@@ -32,9 +32,7 @@ export const pageQuery = graphql`
         publishDate(formatString: "MMMM Do, YYYY")
         tags
         description {
-          childMarkdownRemark {
-            html
-          }
+          raw
         }
       }
     }

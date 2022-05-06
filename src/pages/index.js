@@ -16,7 +16,7 @@ class RootIndex extends React.Component {
         <Hero
           image
           title={author.name}
-          content={author.shortBio.shortBio}
+          content={author.shortBio}
         />
         <ArticlePreview posts={posts} />
       </Layout>
@@ -35,9 +35,7 @@ export const pageQuery = graphql`
         publishDate(formatString: "MMMM Do, YYYY")
         tags
         description {
-          childMarkdownRemark {
-            html
-          }
+          raw
         }
       }
     }
@@ -47,7 +45,7 @@ export const pageQuery = graphql`
       nodes {
         name
         shortBio {
-          shortBio
+          raw
         }
         title
       }
