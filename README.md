@@ -59,4 +59,4 @@ See the [official Contentful getting started guide](https://www.contentful.com/d
 
 ## Contribution
 
-Feel free to open pull requests to fix bugs. If you want to add features, please have a look at the [original version](https://github.com/contentful/starter-gatsby-blog). It is always open to contributions and pull requests.
+Feel free to open pull requests to fix bugs. If you want to add features, please have a look at the [original version](https://github.com/contentful-userland/gatsby-contentful-starter). It is always open to contributions and pull requests.
