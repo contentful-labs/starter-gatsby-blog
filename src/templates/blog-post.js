@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import readingTime from 'reading-time'
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer' // TODO: remove this dep usage?
 
 import Seo from '../components/seo'
 import Layout from '../components/layout'
@@ -13,14 +10,13 @@ import * as styles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulBlogPost')
-    const previous = get(this.props, 'data.previous')
-    const next = get(this.props, 'data.next')
+    const post = this.props?.data?.contentfulBlogPost
+    const previous = this.props?.data?.previous
+    const next = this.props?.data?.next
     const plainTextDescription = documentToPlainTextString(
-      JSON.parse(post.description.raw)
+      post.description.description
     )
-    const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
-    const { minutes: timeToRead } = readingTime(plainTextBody)
+    const timeToRead = post.body?.childMarkdownRemark?.timeToRead
 
     return (
       <Layout location={this.props.location}>
@@ -42,7 +38,13 @@ class BlogPostTemplate extends React.Component {
           </span>
           <div className={styles.article}>
             <div className={styles.body}>
-              {post.body?.raw && renderRichText(post.body)}
+              {post.body?.childMarkdownRemark?.html && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: post.body.childMarkdownRemark.html,
+                  }}
+                />
+              )}
             </div>
             <Tags tags={post.tags} />
             {(previous || next) && (
@@ -95,11 +97,18 @@ export const pageQuery = graphql`
         }
       }
       body {
-        raw
+        body
+        childMarkdownRemark {
+          html
+          timeToRead
+        }
       }
       tags
       description {
-        raw
+        description
+        childMarkdownRemark {
+          html
+        }
       }
     }
     previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { renderRichText } from 'gatsby-source-contentful/rich-text' // TODO remove this dep usage?
 
 import Container from './container'
 import Tags from './tags'
@@ -22,7 +22,8 @@ const ArticlePreview = ({ posts }) => {
                 <h2 className={styles.title}>{post.title}</h2>
               </Link>
               <div>
-                {post.description?.raw && renderRichText(post.description)}
+                {post.description?.description &&
+                  renderRichText(post.description)}
               </div>
               <div className={styles.meta}>
                 <small className="meta">{post.publishDate}</small>

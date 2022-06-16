@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import get from 'lodash/get'
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
@@ -8,8 +7,8 @@ import ArticlePreview from '../components/article-preview'
 
 class RootIndex extends React.Component {
   render() {
-    const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
-    const [author] = get(this, 'props.data.allContentfulPerson.nodes')
+    const posts = this.props?.data?.allContentfulBlogPost?.nodes
+    const [author] = this.props?.data?.allContentfulPerson?.nodes
 
     return (
       <Layout location={this.props.location}>
@@ -43,7 +42,9 @@ export const pageQuery = graphql`
           )
         }
         description {
-          raw
+          childMarkdownRemark {
+            html
+          }
         }
       }
     }
@@ -53,7 +54,9 @@ export const pageQuery = graphql`
       nodes {
         name
         shortBio {
-          raw
+          childMarkdownRemark {
+            html
+          }
         }
         title
         heroImage: image {
