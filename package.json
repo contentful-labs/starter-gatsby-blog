@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "contentful-import": "^8.0.0",
+    "gatsby-provision-contentful": "0.0.3",
     "netlify-cli": "^10.0.0"
   },
   "engines": {
@@ -49,6 +50,7 @@
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
     "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "netlify:deploy": "netlify deploy -d public -p",
+    "gatsby-provision": "gatsby-provision-contentful --contentful-data-path='./contentful/export.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN"
   }
 }
