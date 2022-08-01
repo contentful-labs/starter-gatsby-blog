@@ -91,6 +91,10 @@
   }
 
   .article ul {
-    padding-left: 0;
+    padding-left: 5;
+  }
+  
+  .article ol {
+    padding-left: 5;
   }
 }
