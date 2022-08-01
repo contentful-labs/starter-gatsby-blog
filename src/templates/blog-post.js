@@ -37,7 +37,6 @@ class BlogPostTemplate extends React.Component {
          )
         },
       },
-
     };
 
     return (
