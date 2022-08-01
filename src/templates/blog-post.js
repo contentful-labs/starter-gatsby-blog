@@ -27,7 +27,6 @@ class BlogPostTemplate extends React.Component {
     
     const options = {
       renderNode: {
-
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { gatsbyImage, description } = node.data.target
         return (
