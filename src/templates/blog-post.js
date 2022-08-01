@@ -26,7 +26,6 @@ class BlogPostTemplate extends React.Component {
     
     
     const options = {
-      
       renderNode: {
 
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
