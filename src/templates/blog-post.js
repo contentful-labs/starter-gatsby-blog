@@ -24,7 +24,6 @@ class BlogPostTemplate extends React.Component {
     const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
     const { minutes: timeToRead } = readingTime(plainTextBody)
     
-    
     const options = {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
