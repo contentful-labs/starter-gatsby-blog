@@ -32,7 +32,7 @@ export const pageQuery = graphql`
         publishDate(formatString: "MMMM Do, YYYY")
         tags
         heroImage {
-          gatsbyImageData(
+          gatsbyImage(
             layout: FULL_WIDTH
             placeholder: BLURRED
             width: 424
