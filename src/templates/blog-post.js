@@ -112,15 +112,7 @@ export const pageQuery = graphql`
       }
       body {
         raw
-        references {
-          ... on ContentfulAsset {
-            contentful_id
-            title
-            description
-            gatsbyImage(width: 1000)
-            __typename
-          }
-        }
+        
       }
       tags
       description {
