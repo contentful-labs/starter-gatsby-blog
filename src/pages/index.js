@@ -28,7 +28,7 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlogPost(sort: { publishDate: DESC }) {
       nodes {
         title
         slug
@@ -57,11 +57,7 @@ export const pageQuery = graphql`
         }
         title
         heroImage: image {
-          gatsbyImage(
-            layout: CONSTRAINED
-            placeholder: BLURRED
-            width: 1180
-          )
+          gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1180)
         }
       }
     }
