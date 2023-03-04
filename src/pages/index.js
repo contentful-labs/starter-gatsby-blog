@@ -8,7 +8,7 @@ import ArticlePreview from '../components/article-preview'
 
 class RootIndex extends React.Component {
   render() {
-    const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+    const posts = get(this, 'props.data.allContentfulGatsbysampleblog.nodes')
     const [author] = get(this, 'props.data.allContentfulPerson.nodes')
 
     return (
@@ -18,6 +18,7 @@ class RootIndex extends React.Component {
           title={author.name}
           content={author.shortBio}
         />
+        {console.log(posts[1])}
         <ArticlePreview posts={posts} />
       </Layout>
     )
@@ -28,23 +29,21 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulBlogPost(sort: { publishDate: DESC }) {
+    allContentfulGatsbysampleblog(sort: { createdAt: DESC }) {
       nodes {
         title
         slug
-        publishDate(formatString: "MMMM Do, YYYY")
-        tags
-        heroImage {
+        createdAt(formatString: "MMMM Do, YYYY")
+        attachment {
           gatsbyImage(
             layout: FULL_WIDTH
             placeholder: BLURRED
             width: 424
             height: 212
+            formats: AUTO
           )
         }
-        description {
-          raw
-        }
+        description
       }
     }
     allContentfulPerson(

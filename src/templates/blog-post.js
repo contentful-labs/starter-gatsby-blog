@@ -15,28 +15,25 @@ import * as styles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulBlogPost')
+    const post = get(this.props, 'data.contentfulGatsbysampleblog') //blog名変更
     const previous = get(this.props, 'data.previous')
     const next = get(this.props, 'data.next')
     const plainTextDescription = documentToPlainTextString(
-      JSON.parse(post.description.raw)
+      JSON.parse(post.article2.article2)
     )
-    const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
+    const plainTextBody = documentToPlainTextString(
+      JSON.parse(post.article2.article2)
+    )
     const { minutes: timeToRead } = readingTime(plainTextBody)
-    
+
     const options = {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { gatsbyImage, description } = node.data.target
-        return (
-           <GatsbyImage
-              image={getImage(gatsbyImage)}
-              alt={description}
-           />
-         )
+          const { gatsbyImage, description } = node.data.target
+          return <GatsbyImage image={getImage(gatsbyImage)} alt={description} />
         },
       },
-    };
+    }
 
     return (
       <Layout location={this.props.location}>
@@ -96,34 +93,27 @@ export const pageQuery = graphql`
     $previousPostSlug: String
     $nextPostSlug: String
   ) {
-    contentfulBlogPost(slug: { eq: $slug }) {
+    contentfulGatsbysampleblog(slug: { eq: $slug }) {
       slug
       title
-      author {
-        name
-      }
-      publishDate(formatString: "MMMM Do, YYYY")
-      rawDate: publishDate
-      heroImage {
+      createdAt(formatString: "MMMM Do, YYYY")
+      rawDate: createdAt
+      attachment {
         gatsbyImage(layout: FULL_WIDTH, placeholder: BLURRED, width: 1280)
         resize(height: 630, width: 1200) {
           src
         }
       }
-      body {
-        raw
-        
+      article2 {
+        article2
       }
-      tags
-      description {
-        raw
-      }
+      description
     }
-    previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {
+    previous: contentfulGatsbysampleblog(slug: { eq: $previousPostSlug }) {
       slug
       title
     }
-    next: contentfulBlogPost(slug: { eq: $nextPostSlug }) {
+    next: contentfulGatsbysampleblog(slug: { eq: $nextPostSlug }) {
       slug
       title
     }
