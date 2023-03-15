@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 import Container from './container'
 import Tags from './tags'
@@ -17,13 +16,15 @@ const ArticlePreview = ({ posts }) => {
         {posts.map((post) => {
           return (
             <li key={post.slug}>
-              <Link to={`/blog/${post.slug}`} className={styles.link}>
-                <GatsbyImage
-                  alt=""
-                  image={post.attachment.gatsbyImage}
-                  style={{ height: 212 }}
-                />
-                {/* throw new Error("Objects are not valid as a React child (found: " + (childString === '[object Object]' ? 'object with keys {' + Object.keys(newChild).join(', ') + '}' : childString) + "). " + 'If you meant to render a collection of children, use an array ' + 'instead.'); */}
+              <Link to={`/${post.slug}`} className={styles.link}>
+                {post.attachmentSingle && (
+                  <GatsbyImage
+                    alt=""
+                    image={post.attachmentSingle.gatsbyImageData}
+                    style={{ height: 212 }}
+                  />
+                )}
+
                 <h2 className={styles.title}>{post.title}</h2>
               </Link>
               <div>{post?.description && post.description}</div>

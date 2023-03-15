@@ -9,16 +9,16 @@ import ArticlePreview from '../components/article-preview'
 class RootIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulGatsbysampleblog.nodes')
-    const [author] = get(this, 'props.data.allContentfulPerson.nodes')
-
+    // const [author] = get(this, 'props.data.allContentfulPerson.nodes')
+    const local = get(this, 'props.data.file')
     return (
       <Layout location={this.props.location}>
         <Hero
-          image={author.heroImage.gatsbyImage}
-          title={author.name}
-          content={author.shortBio}
+          image={local.childImageSharp.gatsbyImageData}
+          title={local.name}
+          content={''}
         />
-        {console.log(posts[1])}
+
         <ArticlePreview posts={posts} />
       </Layout>
     )
@@ -33,17 +33,11 @@ export const pageQuery = graphql`
       nodes {
         title
         slug
-        createdAt(formatString: "MMMM Do, YYYY")
-        attachment {
-          gatsbyImage(
-            layout: FULL_WIDTH
-            placeholder: BLURRED
-            width: 424
-            height: 212
-            formats: AUTO
-          )
-        }
         description
+        createdAt(formatString: "MMMM Do, YYYY")
+        attachmentSingle {
+          gatsbyImageData(layout: FIXED, width: 424, height: 212)
+        }
       }
     }
     allContentfulPerson(
@@ -58,6 +52,12 @@ export const pageQuery = graphql`
         heroImage: image {
           gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1180)
         }
+      }
+    }
+    file {
+      name
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 1180)
       }
     }
   }

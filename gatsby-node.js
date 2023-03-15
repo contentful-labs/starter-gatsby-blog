@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allContentfulBlogPost {
+        allContentfulGatsbysampleblog {
           nodes {
             title
             slug
@@ -27,7 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allContentfulBlogPost.nodes
+  const posts = result.data.allContentfulGatsbysampleblog.nodes
 
   // Create blog posts pages
   // But only if there's at least one blog post found in Contentful
@@ -40,8 +40,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].slug
 
       createPage({
-        path: `/blog/${post.slug}/`,
-        component: contentfulGatsbysampleblog,
+        path: `${post.slug}/`,
+        component: blogPost,
         context: {
           slug: post.slug,
           previousPostSlug,
