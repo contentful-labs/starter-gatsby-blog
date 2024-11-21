@@ -13,6 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nodes {
             title
             slug
+            id
           }
         }
       }
@@ -47,6 +48,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           previousPostSlug,
           nextPostSlug,
         },
+        ownerNodeId: post.id,
       })
     })
   }
